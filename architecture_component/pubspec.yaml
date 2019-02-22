@@ -1,0 +1,19 @@
+name: architecture_component
+description: The new Flutter Package which supported Mobile Architecture Component
+version: 0.0.1
+author: Tran Duc Tam <tranductam2802@gmail.com>
+homepage: https://github.com/MrNinja/flutter_architecture_component
+
+environment:
+  sdk: '>=2.1.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
