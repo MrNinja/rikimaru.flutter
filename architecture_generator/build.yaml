@@ -1,0 +1,49 @@
+# A single target with the same name as the package
+targets:
+  # '$definingPackageName:$targetName'
+  $default:
+    builders:
+      # '$packageName|$builderName'
+      architecture_generator|architecture_component:
+        # enabled: Boolean, Optional: Whether to apply the builder to this target.
+        # generate_for: List<String> or Map, Optional: The subset of files within the target's sources which should have this Builder applied.
+        # options: Map, Optional: A free-form map which will be passed to the Builder as a BuilderOptions when it is constructed.
+        # dev_options: Map, Optional: A free-form map which will be passed to the Builder as a BuilderOptions when it is constructed.
+        # release_options: Map, Optional: A free-form map which will be passed to the Builder as a BuilderOptions when it is constructed.
+        enabled: true
+
+builders:
+  # '$builderName'
+  architecture_component:
+    # 'target: $packageName'
+    target: ":architecture_generator"
+
+    # Required. The import uri that should be used to import the library containing the Builder class.
+    # This should always be a package: uri.
+    import: "package:architecture_generator/builder.dart"
+
+    # A List<String> which contains the names of the top-level methods in the imported library which are a function
+    # fitting the typedef Builder factoryName(BuilderOptions options)
+    builder_factories: ["screenWidgetBuilder"]
+
+    # Required. A map from input extension to the list of output extensions that may be created for that input.
+    # This must match the merged buildExtensions maps from each Builder in builder_factories
+    build_extensions: {".dart": [".screenWidget.g.part"]}
+
+    # The packages which should have this builder automatically to applied. Defaults to 'none' The possibilities are:
+    # - "none"         : Never apply this Builder unless it is manually configured
+    # - "dependents"   : Apply this Builder to the package with a direct dependency on the package exposing the builder.
+    # - "all_packages" : Apply this Builder to all packages in the transitive dependency graph.
+    # - "root_package" : Apply this Builder only to the top-level package.
+    auto_apply: dependents
+
+    # The location that generated assets should be output to. The possibilities are:
+    # - "source" : Outputs go to the source tree next to their primary inputs.
+    # - "cache"  : Outputs go to a hidden build cache and won't be published. The default is "cache".
+    #              If a Builder specifies that it outputs to "source" it will never run on any package other than the root
+    #              but does not necessarily need to use the "root_package" value for "auto_apply".
+    #              If it would otherwise run on a non-root package it will be filtered out.
+    build_to: cache
+
+    # List of Builder keys. Specifies that other builders should be run on any target which will run this Builder.
+    applies_builders: ["source_gen|combining_builder"]
