@@ -1,9 +1,9 @@
-# Flutter Architecture Component
+# Flutter Architecture Component example
 
 [![pub package](https://img.shields.io/badge/pub-0.0.1-orange.svg)](https://pub.dartlang.org/packages/architecture_component)
 [![pub package](https://img.shields.io/badge/donate-Paypal-brightgreen.svg)](https://www.paypal.me/tranductam)
 
-The new Flutter Package which supported Mobile Architecture Component in Flutter.
+The example for Flutter Architecture Component package.
 
 ## Getting Started
 
@@ -34,31 +34,3 @@ flutter:
   uses-material-design: true
 ...
 ```
-
-## Flutter Architecture Component 
-
-* TODO: To be defined.
-
-### [ViewModel] - The utility class provide the instance of model data each screen.
-
-* TODO: To be defined.
-
-### [LiveData] - The observable data holder class.
-
-* TODO: To be defined.
-
-### [ScreenWidget] - Base widget define the screen in project.
-
-* TODO: To be defined.
-
-### [Repository] - Working class provide the ways to contact to storage module.
-
-* TODO: To be defined.
-
-### [DiskIOWorker] - Local storage worker class (Local databases, caches, preferences, etc).
-
-* TODO: To be defined.
-
-### [NetworkWorker] - Remote server connection controller.
-
-* TODO: To be defined.
