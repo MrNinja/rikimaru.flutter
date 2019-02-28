@@ -1,8 +1,10 @@
 name: architecture_component
-description: The new Flutter Package which supported Mobile Architecture Component
+description: The new Flutter Package which supported Mobile Architecture Component.
 version: 0.0.1
 author: Tran Duc Tam <tranductam2802@gmail.com>
-homepage: https://github.com/MrNinja/flutter_architecture_component
+homepage: https://github.com/MrNinja/rikimaru.flutter/tree/master/architecture_component
+repository: https://github.com/MrNinja/rikimaru.flutter
+issue_tracker: https://github.com/MrNinja/rikimaru.flutter/issues
 
 environment:
   sdk: '>=2.1.0 <3.0.0'
@@ -11,9 +13,17 @@ dependencies:
   flutter:
     sdk: flutter
 
+  quiver: '>=0.21.0 <3.0.0'
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  test: ^1.0.0
+
 flutter:
   uses-material-design: true
+
+dependency_overrides:
+  architecture_generator:
+    path: ../architecture_generator

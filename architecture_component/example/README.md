@@ -1,9 +1,9 @@
-# Architecture Source Generator
+# Architecture Source Generator example
 
 [![pub package](https://img.shields.io/badge/pub-0.0.1-orange.svg)](https://pub.dartlang.org/packages/architecture_generator)
 [![pub package](https://img.shields.io/badge/donate-Paypal-brightgreen.svg)](https://www.paypal.me/tranductam)
 
-The Flutter package supported for generate Mobile Architecture Component source code.
+The example for Architecture Source Generator package.
 
 ## Prepare dependencies
 To use this package, add `architecture_generator` and `build_runner` as a [dev_dependencies in your pubspec.yaml file](https://flutter.io/platform-plugins/).

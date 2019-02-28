@@ -1,0 +1,7 @@
+name: architecture_generator_plugin_loader
+version: 6.3.0
+description: This pubspec determines the version of the analyzer plugin to load.
+environment:
+  sdk: '>=1.24.0-dev.1.0'
+dependencies:
+  architecture_generator: '>=0.0.1 <1.0.0'
